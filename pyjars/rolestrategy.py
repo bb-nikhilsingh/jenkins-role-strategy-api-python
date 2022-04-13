@@ -158,7 +158,7 @@ class Role:
         return all(ref_ret)
 
     def list_sid(self):
-        url = self._parent._url + '/getAllRoles'
+        url = self._parent._url + '/getAllRoles' + '?type=' + self.type
         query = self._parent._get(url)
         if query.status_code != 200:
             query.raise_for_status()
